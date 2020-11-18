@@ -1,14 +1,23 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
+import './questao.dart'
 
 main() => runApp(PerguntaApp());
 
-class PerguntaAppState extends State<PerguntaApp> {
-  var perguntaSelecionada = 0;
+class _PerguntaAppState extends State<PerguntaApp> {
+  var _perguntaSelecionada = 0;
 
-  void responder() {
-    perguntaSelecionada++;
-    print(perguntaSelecionada);
+  void _responder() {
+    setState(() {
+      _perguntaSelecionada++;
+    });
+    print(_perguntaSelecionada);
+  }
+
+  void resetarContador() {
+    setState(() {
+      _perguntaSelecionada = 0;
+    });
   }
 
   @override
@@ -24,18 +33,22 @@ class PerguntaAppState extends State<PerguntaApp> {
         ),
         body: Column(
           children: <Widget>[
-            Text(perguntas[0]),
+            Questao(perguntas[_perguntaSelecionada]),
             RaisedButton(
               child: Text('Resposta 1'),
-              onPressed: responder,
+              onPressed: _responder,
             ),
             RaisedButton(
               child: Text('Resposta 2'),
-              onPressed: responder,
+              onPressed: _responder,
             ),
             RaisedButton(
               child: Text('Resposta 3'),
-              onPressed: responder,
+              onPressed: _responder,
+            ),
+            RaisedButton(
+              child: Text('Resetar contador'),
+              onPressed: resetarContador,
             ),
           ],
         ),
@@ -45,5 +58,5 @@ class PerguntaAppState extends State<PerguntaApp> {
 }
 
 class PerguntaApp extends StatefulWidget {
-  PerguntaAppState createState() => PerguntaAppState();
+  _PerguntaAppState createState() => _PerguntaAppState();
 }
