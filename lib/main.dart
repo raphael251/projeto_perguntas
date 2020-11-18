@@ -15,12 +15,6 @@ class _PerguntaAppState extends State<PerguntaApp> {
     print(_perguntaSelecionada);
   }
 
-  void resetarContador() {
-    setState(() {
-      _perguntaSelecionada = 0;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     final List<String> perguntas = [
@@ -38,10 +32,6 @@ class _PerguntaAppState extends State<PerguntaApp> {
             Answer('Resposta 1'),
             Answer('Resposta 2'),
             Answer('Resposta 3'),
-            RaisedButton(
-              child: Text('Resetar contador'),
-              onPressed: resetarContador,
-            ),
           ],
         ),
       ),
