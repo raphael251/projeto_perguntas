@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
-import './questao.dart'
+import './questao.dart';
 
 main() => runApp(PerguntaApp());
 
@@ -23,8 +23,8 @@ class _PerguntaAppState extends State<PerguntaApp> {
   @override
   Widget build(BuildContext context) {
     final List<String> perguntas = [
-      'qual é a sua cor favorita?',
-      'qual é o seu animal favorito?',
+      'Qual é a sua cor favorita?',
+      'Qual é o seu animal favorito?',
     ];
     return MaterialApp(
       home: Scaffold(
