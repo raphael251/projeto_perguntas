@@ -52,7 +52,12 @@ class _QuestionAppState extends State<QuestionApp> {
                       .toList(),
                 ],
               )
-            : null,
+            : Center(
+                child: Text(
+                  'Parabéns!',
+                  style: TextStyle(fontSize: 28),
+                ),
+              ),
       ),
     );
   }
